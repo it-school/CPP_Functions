@@ -20,7 +20,7 @@ int main(int argc, char** argv)
 	int array[N][N];
 
 	fillArray(array);
-	//	fillArray(array, 0);
+//	fillArray(array, 0);
 	printArray(array);
 	processArray(array, 5);
 	printArray(array);
