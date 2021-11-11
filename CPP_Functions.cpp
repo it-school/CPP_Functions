@@ -7,20 +7,27 @@
 using namespace std;
 int counter = 0;
 
-int factorial(const int n)
+long long factorial(const long long n)
 {
-	int result = 1;
-
-	for (int i = result; i <= n; i++)
+	long long result = 1;
+	cout << endl << endl << "1";
+	for (int i = result + 1; i <= n; i++)
 	{
 		result *= i;
+		cout << " * " << i;
 	}
+	cout << " = " << result << endl;
 
 	return result;
 }
 
-int factorialR(const int n)
+long long int factorialR(const long long n)
 {
+	// 4! = 1 * 2 * 3 * 4 = 4 * 3!
+	// 3! =					3 * 2!
+	// 2! =					2 * 1!
+	// 1! =					1 * 0!
+	// 0! =					1
 	/*
 	if (n == 1)
 		return 1;
@@ -44,7 +51,6 @@ int fibonacci(const unsigned int n)
 
 int main(int argc, char** argv)
 {
-	
 	cout << "Functions\n";
 	cout << "Arguments count: " << argc << endl;
 
@@ -56,26 +62,27 @@ int main(int argc, char** argv)
 
 	int array[N][N];
 
-	fillArray(array);
-//	fillArray(array, 0);
+	fillArray(array, 7);
 	printArray(array);
+
+	fillArray(array);
+	printArray(array);
+
 	processArray(array, 5);
 	printArray(array);
 
 	int maxX = 0, maxY = 0;
 	int max = findMaxInArray(array, maxX, maxY);
-	cout << "Max: " << max;
+	cout << endl << "Max: " << max;
 	cout << "(" << maxX << ", " << maxY << ")" << endl;
 
-	// getchar();
+	//	getchar();
 
-	
+	//	recursion();
 
-	//recursion();
-	cout << factorial(6);
+	cout << endl << factorial(6);
 	cout << endl << factorialR(6);
-	cout << endl << fibonacci(0);
-
+	cout << endl << fibonacci(10);
 
 	return 0;
 }
@@ -127,7 +134,7 @@ void fillArray(int array[N][N], const int k)
 	}
 }
 
-int findMaxInArray(int array[N][N], int &x, int &y)
+int findMaxInArray(int array[N][N], int& x, int& y)
 {
 	int max = array[0][0];
 
